@@ -16,6 +16,7 @@ public class Main extends Application {
         primaryStage.setTitle("Wawets App");
 
         primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setMinHeight(400);
         primaryStage.show();
     }
 

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" fx:controller="com.infoman2.controller.MainController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.infoman2.controller.MainController">
    <children>
       <Label text="Wawets App">
          <font>
@@ -15,9 +15,26 @@
       <TextField fx:id="firstName" promptText="First Name" />
       <TextField fx:id="lastName" promptText="Last Name" />
       <TextField fx:id="email" promptText="Email" />
-      <Button mnemonicParsing="false" onAction="#save" text="Save" />
+      <HBox prefHeight="27.0" prefWidth="590.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#save" text="Save" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#edit" text="Edit" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="0.0" />
+                  <Button mnemonicParsing="false" onAction="#delete" text="Delete" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="colFN" prefWidth="181.0" text="First Name" />
+          <TableColumn fx:id="colLN" prefWidth="196.0" text="Last Name" />
+           <TableColumn fx:id="colEmail" prefWidth="192.0" text="Email" />
+        </columns>
+      </TableView>
    </children>
    <padding>
-      <Insets left="5.0" right="5.0" top="5.0" />
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </padding>
 </VBox>

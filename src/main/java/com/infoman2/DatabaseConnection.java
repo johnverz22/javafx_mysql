@@ -7,7 +7,7 @@ public class DatabaseConnection {
     private String url = "jdbc:mysql://localhost:3306/infoman2_fxapp_db";
     private String user = "app";
     private String password = "1234";
-    public Connection connection;
+    private Connection connection;
 
     public DatabaseConnection(){
         try{
@@ -16,5 +16,9 @@ public class DatabaseConnection {
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    public Connection getConnection(){
+        return connection;
     }
 }
